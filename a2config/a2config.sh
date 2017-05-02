@@ -1,5 +1,5 @@
 #Install apache2
-apt install apache2
+apt install -y apache2
 
 #Enable mods
 a2enmod proxy
