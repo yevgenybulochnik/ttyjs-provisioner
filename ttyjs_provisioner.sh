@@ -10,4 +10,4 @@ usermod -aG sudo yevgeny
 echo "yevgeny ALL=(ALL) NOPASSWD:ALL" >>  /etc/sudoers #passwordless sudo
 
 #Execute a2config shellscript
-${DIR}/a2config/a2config.sh
+${SHELL_DIR}/a2config/a2config.sh
