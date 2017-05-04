@@ -1,3 +1,6 @@
+#Absolute path of executed shellscript
+SHELL_DIR="$( cd "$(dirname "${BASH_SOURCE[0]}")" && pwd )"
+
 #Install apache2
 apt install -y apache2
 
@@ -9,6 +12,15 @@ a2enmod rewrite
 
 #Disable default apache site
 a2dissite 000-default.conf
+
+#Move .conf files to apache folder
+for FILE in ${SHELL_DIR}/*.conf
+do
+    cp $FILE /etc/apache2/sites-available/
+done
+
+#Move .htpasswd file
+cp ${SHELL_DIR}/.htpasswd /etc/apache2
 
 #Remove default /var/www/html
 rm -rf /var/www/html
