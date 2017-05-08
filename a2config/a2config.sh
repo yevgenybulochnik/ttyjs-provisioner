@@ -24,3 +24,8 @@ cp ${SHELL_DIR}/.htpasswd /etc/apache2
 
 #Remove default /var/www/html
 rm -rf /var/www/html
+
+#Bulochnik.com index.html
+mkdir /var/www/bulochnik.com
+
+#cp $SHELL_DIR/index.html /var/www/bulochnik.com/
