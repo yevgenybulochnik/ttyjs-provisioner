@@ -28,4 +28,9 @@ rm -rf /var/www/html
 #Bulochnik.com index.html
 mkdir /var/www/bulochnik.com
 
-#cp $SHELL_DIR/index.html /var/www/bulochnik.com/
+cp $SHELL_DIR/index.html /var/www/bulochnik.com/
+
+#Enable sites
+a2ensite bulochnik.com.conf
+a2ensite dev.bulochnik.com.conf
+a2ensite preview.bulochnik.com.conf
