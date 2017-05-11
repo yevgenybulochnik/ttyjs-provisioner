@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
       vb.memory = 2048
     end
     node.vm.provision :shell, inline: <<-SHELL
-    /vagrant/ttyjs_provisioner.sh
+    /vagrant/ttyjs_provisioner.sh yevgeny devops#1
     SHELL
   end
 end
