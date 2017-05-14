@@ -9,13 +9,13 @@ Vagrant.configure("2") do |config|
   config.hostmanager.include_offline = false
   config.vbguest.auto_update = false
   config.vbguest.no_remote= false
-  config.vm.define "local.bulochnik.com" do |node|
+  config.vm.define "vagrant.devbox" do |node|
     node.vm.box = "ubuntu/xenial64"
-    node.vm.hostname = "local.bulochnik.com"
+    node.vm.hostname = "vagrant.devbox"
     node.hostmanager.aliases = %w(local.bulochnik.com dev.local.bulochnik.com preview.local.bulochnik.com)
     node.vm.network :private_network, ip: "192.168.56.2"
     node.vm.provider :virtualbox do |vb|
-      vb.name = "local.bulochnik.com"
+      vb.name = "vagrant.devbox"
       vb.memory = 2048
     end
     node.vm.provision :shell, inline: <<-SHELL
