@@ -1,3 +1,4 @@
+#!/bin/bash
 #Absolute path of executed shellscript
 SHELL_DIR="$( cd "$(dirname "${BASH_SOURCE[0]}")" && pwd )"
 
