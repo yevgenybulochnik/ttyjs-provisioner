@@ -11,7 +11,7 @@ apt update
 
 #Adding new yevgeny user, adding to group sudo
 adduser --disabled-password --gecos "" $USERNAME
-usermod -aG sudo yevgeny
+usermod -aG sudo $USERNAME
 echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" >>  /etc/sudoers #passwordless sudo
 
 #Execute a2config shellscript
