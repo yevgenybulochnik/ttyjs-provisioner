@@ -6,7 +6,7 @@ USERNAME=$1
 PASSWD=$2
 
 #Updating APT Repos + adding vim PPA
-add-apt-repository ppa:jonathonf/vim
+add-apt-repository ppa:jonathonf/vim -y
 apt update
 
 #Adding new yevgeny user, adding to group sudo
