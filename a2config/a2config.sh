@@ -9,6 +9,7 @@ a2enmod proxy
 a2enmod proxy_http
 a2enmod proxy_wstunnel
 a2enmod rewrite
+a2enmod ssl
 
 #Disable default apache site
 a2dissite 000-default.conf
