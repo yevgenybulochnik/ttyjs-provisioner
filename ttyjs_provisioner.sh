@@ -21,7 +21,8 @@ ${SHELL_DIR}/a2config/a2config.sh
 apt install -y \
     npm \
     vim \
-    htop
+    htop \
+    python3-venv
 
 #Install npm packages +Node
 npm install -g n
@@ -38,4 +39,6 @@ sudo htpasswd -cb /etc/apache2/.htpasswd $USERNAME $PASSWD
 git clone https://github.com/yevgenybulochnik/dotfiles.git ~/dotfiles
 ~/dotfiles/install.sh
 mkdir ~/pyEnvs
+cd ~/pyEnvs
+python3 -m venv jupEnv
 COMMANDS
