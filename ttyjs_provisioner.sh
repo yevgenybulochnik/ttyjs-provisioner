@@ -41,7 +41,4 @@ cd ~/pyEnvs
 python3 -m venv jupEnv
 git clone https://github.com/yevgenybulochnik/dotfiles.git ~/dotfiles
 ~/dotfiles/install.sh
-mkdir ~/pyEnvs
-cd ~/pyEnvs
-python3 -m venv jupEnv
 COMMANDS
