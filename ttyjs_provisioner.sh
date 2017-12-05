@@ -36,9 +36,7 @@ curl https://github.com/yevgenybulochnik.keys > ~/.ssh/authorized_keys
 sudo npm install -g tty.js
 sudo pm2 start tty.js --name "WebTerm" -- --port 8181
 sudo htpasswd -cb /etc/apache2/.htpasswd $USERNAME $PASSWD
-mkdir ~/pyEnvs
-cd ~/pyEnvs
-python3 -m venv jupEnv
+${SHELL_DIR}/pysetup/pySetup.sh
 git clone https://github.com/yevgenybulochnik/dotfiles.git ~/dotfiles
 ~/dotfiles/install.sh
 COMMANDS
