@@ -46,3 +46,4 @@ pip install pandas
 
 # clean up
 sudo rm -rf ~/pyEnvs/Python-3.6.3*
+sudo rm -rf ~/pysetup/

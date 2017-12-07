@@ -29,6 +29,10 @@ npm install -g n
 n 6.10.1
 npm install -g pm2
 
+#Move python setup folder & permissions
+cp -r ${SHELL_DIR}/pysetup/ /home/$USERNAME/
+chown $USERNAME:$USERNAME -R /home/$USERNAME/pysetup/
+
 #Setup Dotfiles, ttyjs, pm2, htpasswd
 su $USERNAME <<COMMANDS
 mkdir ~/.ssh
@@ -36,7 +40,7 @@ curl https://github.com/yevgenybulochnik.keys > ~/.ssh/authorized_keys
 sudo npm install -g tty.js
 sudo pm2 start tty.js --name "WebTerm" -- --port 8181
 sudo htpasswd -cb /etc/apache2/.htpasswd $USERNAME $PASSWD
-${SHELL_DIR}/pysetup/pySetup.sh
+~./pysetup/pySetup.sh
 git clone https://github.com/yevgenybulochnik/dotfiles.git ~/dotfiles
 ~/dotfiles/install.sh
 COMMANDS
