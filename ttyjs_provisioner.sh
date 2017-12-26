@@ -22,6 +22,7 @@ apt install -y \
     npm \
     vim \
     htop \
+    git \
     python3-venv
 
 #Install npm packages +Node
