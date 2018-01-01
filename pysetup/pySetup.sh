@@ -39,6 +39,7 @@ pip install Wand
 pip install jupyter
 pip install matplotlib
 pip install pandas
+pip install xlsxwriter
 # Example wand import
 # from wand.image import Image as WImage
 # img = WImage(filename='hat.pdf')
