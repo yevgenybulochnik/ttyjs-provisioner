@@ -40,6 +40,7 @@ pip install jupyter
 pip install matplotlib
 pip install pandas
 pip install xlsxwriter
+pip install flake8
 # Example wand import
 # from wand.image import Image as WImage
 # img = WImage(filename='hat.pdf')

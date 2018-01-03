@@ -4,18 +4,19 @@ SHELL_DIR="$( cd "$(dirname "${BASH_SOURCE[0]}")" && pwd )"
 
 USERNAME=$1
 PASSWD=$2
+DOMAIN=$3
 
 #Updating APT Repos + adding vim PPA
 add-apt-repository ppa:jonathonf/vim -y
 apt update
 
-#Adding new yevgeny user, adding to group sudo
+#Adding new user, adding to group sudo
 adduser --disabled-password --gecos "" $USERNAME
 usermod -aG sudo $USERNAME
 echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" >>  /etc/sudoers #passwordless sudo
 
 #Execute a2config shellscript
-${SHELL_DIR}/a2config/a2config.sh
+${SHELL_DIR}/a2config/a2config.sh $DOMAIN
 
 #Install apt packages
 apt install -y \

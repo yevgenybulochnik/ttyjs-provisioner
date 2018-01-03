@@ -1,6 +1,8 @@
 #Absolute path of executed shellscript
 SHELL_DIR="$( cd "$(dirname "${BASH_SOURCE[0]}")" && pwd )"
 
+DOMAIN=$1
+
 #Install apache2
 apt install -y apache2
 
@@ -14,6 +16,15 @@ a2enmod ssl
 #Disable default apache site
 a2dissite 000-default.conf
 
+#Domain name setup
+if [ ! -z "$DOMAIN" ]
+then
+    sed -i -e "s/bulochnik/$DOMAIN/g" ${SHELL_DIR}/*.conf
+    rename "s/bulochnik/$DOMAIN/" ${SHELL_DIR}/*.conf
+else
+    DOMAIN='bulochnik'
+fi
+
 #Move .conf files to apache folder
 for FILE in ${SHELL_DIR}/*.conf
 do
@@ -23,10 +34,10 @@ done
 #Remove default /var/www/html
 rm -rf /var/www/html
 
-#Bulochnik.com index.html
-mkdir /var/www/bulochnik.com
+#Domain index.html
+mkdir /var/www/$DOMAIN.com
 
-cp $SHELL_DIR/index.html /var/www/bulochnik.com/
+cp $SHELL_DIR/index.html /var/www/$DOMAIN.com/
 
 #Make ssl folder
 mkdir /etc/apache2/ssl/
@@ -36,7 +47,7 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apa
     -subj "/C=US/ST=OR/L=Portland/O= /OU= /CN= "
 
 #Enable sites
-a2ensite bulochnik.com.conf
-a2ensite dev.bulochnik.com.conf
-a2ensite preview.bulochnik.com.conf
-a2ensite jupyter.bulochnik.com.conf
+a2ensite $DOMAIN.com.conf
+a2ensite dev.$DOMAIN.com.conf
+a2ensite preview.$DOMAIN.com.conf
+a2ensite jupyter.$DOMAIN.com.conf
