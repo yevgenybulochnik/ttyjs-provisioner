@@ -44,6 +44,8 @@ npm install tty.js
 ~/node_modules/.bin/pm2 start ~/node_modules/.bin/tty.js --name "webterm" -- --port 8181
 sudo htpasswd -cb /etc/apache2/.htpasswd $USERNAME $PASSWD
 ~/pysetup/pySetup.sh
+echo '{"shell":"/bin/zsh"}' > ~/.tty.js/config.json
+~/node_modules/.bin/pm2 restart all
 git clone https://github.com/yevgenybulochnik/dotfiles.git ~/dotfiles
 ~/dotfiles/install.sh
 COMMANDS
