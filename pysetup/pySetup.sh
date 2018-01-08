@@ -41,6 +41,8 @@ pip install matplotlib
 pip install pandas
 pip install xlsxwriter
 pip install flake8
+pip install boto3
+pip install awscli
 # Example wand import
 # from wand.image import Image as WImage
 # img = WImage(filename='hat.pdf')
