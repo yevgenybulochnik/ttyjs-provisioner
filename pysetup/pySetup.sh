@@ -43,6 +43,8 @@ pip install xlsxwriter
 pip install flake8
 pip install boto3
 pip install awscli
+pip install tabulate
+pip install docopt
 # Example wand import
 # from wand.image import Image as WImage
 # img = WImage(filename='hat.pdf')
